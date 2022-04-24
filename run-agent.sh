@@ -4,7 +4,7 @@
 
 # ディレクトリを確実に存在させて、パーミッションを設定する
 agent_lnk='.agent'
-agent_dir=$(dirname $(readlink -f ${agent_lnk}))
+agent_dir=$(dirname $(readlink -m ${agent_lnk}))
 if [[ ! -d ${agent_dir} ]] ; then
     mkdir -p ${agent_dir}
 fi
